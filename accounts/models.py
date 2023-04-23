@@ -31,6 +31,12 @@ class MyUserManager(BaseUserManager):
         user.is_admin = True
         user.save(using=self._db)
         return user
+    
+    @staticmethod
+    def get_user_by_id(id=None):
+        if id is not None:
+            return MyUser.objects.get(id=id)
+        return False
 
 
 class MyUser(AbstractBaseUser):

@@ -14,7 +14,6 @@ from .serializers import MessageSerializer
 
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
-        print("here")
         self.room_name = self.scope["url_route"]["kwargs"]["room_name"]
         self.room_group_name = f"chat_{self.room_name}"
 

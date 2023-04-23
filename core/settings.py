@@ -35,6 +35,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # daphne for channels 4.0 and it must be mentioned before 'django.contrib.staticfiles'
+    'daphne',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -179,4 +182,6 @@ ALLOWED_HOSTS = ["*"]
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=180),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=15),
+    'ALGORITHM': 'HS512',
+    # 'SIGNING_KEY': SECRET_KEY,
 }
